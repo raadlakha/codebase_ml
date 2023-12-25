@@ -1,4 +1,5 @@
 import sys
+from src.loggin import logging
 
 def error_msg_detail(error, error_detail:sys):
 
@@ -17,8 +18,3 @@ class CustomError(Exception):
     def __str__(self):
         return self.error_message
     
-if __name__=="__main__":
-    try:
-        1/0
-    except Exception as e:
-        raise CustomError(error_message=str(e), error_detail=sys)
